@@ -1,18 +1,28 @@
-# YAB Ghana website: Netlify deployment and content changes
+# YAB Ghana website: final About and Board update (31 October 2026)
 
-This archive is ready to deploy: `index.html` is at the ZIP root. You can place the unzipped files in the root of your GitHub repository and connect it to Netlify. Build command: leave blank. Publish directory: `.` (repository root).
+## What is included
 
-**Board profiles:** `board.html` provides the visible cards; `js/site.js` contains full biographies in the `members` array. Keep the display names identical in both places. After editing, commit to GitHub and Netlify will redeploy automatically.
+- Expanded `about.html`: institutional history, Board composition, mission, vision, three principles, governance, leadership portraits, four programme priorities, partner relationships and an activity timeline.
+- `board.html`: eleven locally hosted, member-identified photographs and eleven existing detailed biographies. LinkedIn profiles remain available where confirmed.
+- `css/site.css`: image framing that constrains photographs to their cards on desktop and mobile, plus responsive About layouts. Originals are unchanged and retained.
+- `assets/img/`: member-supplied photographs for Dina, Stephen, Confidence and Davis.
+- `assets/img/portraits/`: standardised, carefully fitted display copies of all eleven portraits, with consistent fitted crops that keep faces and subjects inside the frames. The original member images are retained in `assets/img/`.
 
-**Images:** Seven supplied images are stored in `assets/img/`. Davis Effah Kaufmann’s image on `board.html` is currently referenced directly from the official Lead For Ghana team website, with a fallback. To make the site fully self-contained, replace it with an approved local image file and change the `src` to `assets/img/davis.webp`. The remaining placeholders for Dina, Stephen and Confidence should be replaced only with verified individual photos.
+## RStudio: update the deployed site
 
-**Verification:** See `BOARD_PROFILE_RESEARCH_NOTES.md` for the identity/role checks and supporting public sources. All external profile links are displayed when a member’s full biography is opened. Names and committee assignments should receive a final administrative check before official launch.
+**Important: The GitHub repository is already linked to Netlify.** Do not create another repository or Netlify project.
 
-**Contact form:** Netlify Forms will function once the site is deployed with form processing enabled in the Netlify project; test a submission on the live site. This local website ZIP does not include a database or a CMS dashboard.
+1. Open your existing `YAB_Ghana_Website.Rproj` in RStudio.
+2. Download this ZIP and keep its location available. It contains the site's website files at the ZIP root.
+3. Run the separate `YAB_RStudio_Update.R` script supplied alongside the ZIP or copy its code into the RStudio Console. The script requires you to select the ZIP and overwrites *only* website files present in the ZIP, preserving `.git`, `.gitignore`, the `.Rproj` file and any untracked local files.
+4. Preview `about.html` and `board.html` in a browser; check all eleven photos, the mobile view and biographies.
+5. When satisfied, commit and push to `main`: GitHub → Netlify will automatically publish the changes.
 
-**Privacy:** This site does not publish internal finance documents, bank details, or private contact information. The member-supplied biographies and original photos are used with Board-authorised permission.
+## Notes
 
-## Latest three-profile update (31 October 2026)
-The Board page has verified LinkedIn links and expanded biographies for Dina Mintah, Stephen Opoku Yeboah and Confidence Mawusi. Content is stored in `board.html` (member cards) and `js/site.js` (`members` array, full biographies and source links). Remember to update **both** when editing a member.
-
-The photograph for Confidence is an external image from UEW, with a fallback. Dina and Stephen have initials until local images can be supplied. Upload e.g. `assets/img/dina.webp` or `assets/img/stephen.webp`, then edit the `<div class="person-photo">` in their card to use `<img ... src="assets/img/dina.webp">`.
+- The names of the four newly provided photographs are taken from the captions and ordering in the user-supplied `additional pictures.docx` file.
+- The current website is static. It does not yet offer an online content-management dashboard.
+- The live contact form requires a real test submission to verify Netlify Forms.
+- The external photography image hosts are no longer needed on the Board page; all eleven images are local.
+- The original institutional photograph remains in the About page; the new leadership portraits are also local.
+- Names, committee titles and roles should be reviewed periodically by the Board as responsibilities evolve.

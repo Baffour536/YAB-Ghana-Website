@@ -38,3 +38,7 @@ Verified public LinkedIn URLs supplied by the Board were added prominently to th
 - Stephen: https://www.linkedin.com/in/stephen-opoku-yeboah-a5503414b
 - Confidence: https://www.linkedin.com/in/confidence-mawusi
 - Confidence UEW labelled photo: https://uew.edu.gh/sites/default/files/2024-09/kk_int8.jpg
+
+
+## Approved member-supplied portrait update (31 October 2026)
+Four additional portraits were provided in `additional pictures.docx` with labels and sources: Davis Effah Kaufmann, Stephen Opoku Yeboah, Confidence Mawusi and Dina Kessewaa Mintah. Their photographs are now stored locally (`assets/img/*.webp`) and appear on the Board page in uniformly sized images (`assets/img/portraits/*.webp`). All eleven members now have Board portraits. No external photo URL or placeholder remains on the Board page.
