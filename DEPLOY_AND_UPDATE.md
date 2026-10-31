@@ -6,7 +6,7 @@
 - `board.html`: eleven locally hosted, member-identified photographs and eleven existing detailed biographies. LinkedIn profiles remain available where confirmed.
 - `css/site.css`: image framing that constrains photographs to their cards on desktop and mobile, plus responsive About layouts. Originals are unchanged and retained.
 - `assets/img/`: member-supplied photographs for Dina, Stephen, Confidence and Davis.
-- `assets/img/portraits/`: standardised, carefully fitted display copies of all eleven portraits, with consistent fitted crops that keep faces and subjects inside the frames. The original member images are retained in `assets/img/`.
+- `assets/img/portraits/`: standardised, carefully fitted display copies of all eleven portraits, with full original images retained within uniform frames. The soft background is made from the same portrait, not another photo.
 
 ## RStudio: update the deployed site
 
