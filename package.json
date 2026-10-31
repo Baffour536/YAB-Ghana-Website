@@ -1,0 +1,17 @@
+{
+  "name": "yab-ghana-website",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Official YAB Ghana site and invitation-only editorial workflow",
+  "type": "module",
+  "scripts": {
+    "build": "node ./scripts/build-admin.mjs",
+    "check": "node ./tests/rbac.test.mjs && node --check admin/app.mjs && node --check netlify/functions/cms.mjs && node --check netlify/functions/media.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "latest",
+    "@netlify/identity": "latest",
+    "esbuild": "^0.25.0"
+  },
+  "engines": { "node": ">=20" }
+}

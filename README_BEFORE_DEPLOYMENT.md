@@ -1,26 +1,11 @@
-# YAB Ghana website, 31 October 2026: deployment notes
+# YAB Ghana official website, three-level administration release
 
-This ZIP contains deployable website files at its root. It is NOT a copy of every YAB file from Drive. The separately provided private audit contains a linked discovery catalogue and publication controls.
+**Read first:** `docs/ADMIN_DEPLOYMENT_AND_ACCESS.md` (delivered separately in the ZIP for reference, not deployed publicly).
 
-## Review highlights
-- Founding year 2024; 2025 Values Handbook pilots; 2026 education engagements.
-- Two verified adult-training images from the YAB 2025 southern-belt gallery and existing 2026 gallery assets.
-- All eleven member portraits remain local to the site. The image card containment rules have been reinforced.
-- Private finance, unreleased minutes, school-learner records and draft internal proposals have not been included.
+This update is built from the site ZIP provided on 31 October 2026 and preserves the user-replaced `assets/img/lit-speaker.webp`. It retains existing pages, Board photographs and historical updates, and introduces invite-only role-controlled editing with Netlify Identity, Functions and Blobs.
 
-## RStudio import into the existing website project
-```r
-stopifnot(dir.exists('.git'), file.exists('index.html'))
-zip_file <- file.choose()
-unzip(zip_file, exdir=getwd(), overwrite=TRUE)
-system('git status')
-# Inspect locally before committing
-browseURL(paste0('file:///', normalizePath('about.html', winslash='/')))
-browseURL(paste0('file:///', normalizePath('gallery.html', winslash='/')))
-# Commit only after review
-system('git add -A')
-system('git commit -m "Deep YAB Drive review: 2024 to 2026 history and photos"')
-system('git push origin main')
-```
+The site remains at https://yab-ghana.netlify.app/ and the editor will be at https://yab-ghana.netlify.app/admin/ **after Netlify deploys**.
 
-Check the updated HTML on mobile and desktop after Netlify deploys. Existing Git history and settings are preserved; do not unzip a second project inside your existing project.
+This ZIP contains no Git history, no RStudio private state and no passwords. The Netlify owner must enable Identity, choose Invite only, invite each editor and set `yab_superadmin`, `yab_secretary` or `yab_media`. The user whose role is changed must sign out and sign in again before the new role takes effect.
+
+The technical guide includes RStudio Console commands. Don't upload any private research archives to the GitHub repository.

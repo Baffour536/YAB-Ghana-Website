@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-# Add your verified production Sitemap URL once the official domain is configured.
+Disallow: /admin/
+Disallow: /.netlify/

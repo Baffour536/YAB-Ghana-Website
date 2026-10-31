@@ -167,3 +167,12 @@
 .gallery-item{overflow:hidden;border-radius:3px;isolation:isolate;}
 .gallery-item>img{display:block;width:100%;height:100%;object-fit:cover;}
 .article-cover img{max-width:100%;height:auto;display:block;}
+/* Safe containment: no portrait, gallery or news image can escape its card. */
+.person-card,.gallery-item,.news-card{min-width:0;overflow:hidden}
+.person-photo{width:100%;aspect-ratio:6 / 7;position:relative;overflow:hidden;background:#e7eee9}
+.person-photo img{display:block;width:100%!important;height:100%!important;max-width:100%;object-fit:cover;object-position:center 20%}
+.gallery-item{position:relative}
+.gallery-item>img{display:block;width:100%;height:100%;object-fit:cover;max-width:100%}
+.news-image{overflow:hidden;display:block}
+.news-image img{width:100%;max-width:100%;height:100%;object-fit:cover}
+.yab-dynamic-announcements{background:#f5faf7}.yab-cms-note{background:#fff;padding:22px 25px;border:1px solid #dbe9e0;border-radius:6px;margin:15px 0;overflow-wrap:anywhere}.yab-cms-note h3{margin:0 0 10px;font-family:Georgia,serif}.yab-cms-note p{white-space:pre-line;line-height:1.7}.yab-article{max-width:850px;margin:auto}.yab-article #story-body p{font-size:1.075rem;line-height:1.9;margin:1.2em 0;white-space:pre-line}.footer-admin-link{font-size:12px;color:inherit}

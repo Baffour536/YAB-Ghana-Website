@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-GH">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#123c3d">
+<title>YAB Ghana | Editorial Administration</title>
+<link rel="icon" href="/assets/img/favicon.png"><link rel="stylesheet" href="/admin/admin.css">
+<script type="module" src="/admin/app.js"></script>
+</head>
+<body>
+<div class="admin-top"><a class="admin-brand" href="/"><img src="/assets/img/yab-logo.webp" alt="YAB Ghana logo"><span><b>YAB Ghana</b><small>EDITORIAL ADMINISTRATION</small></span></a><a class="public-link" href="/" target="_blank" rel="noopener">View website ↗</a></div>
+<main>
+<section id="login-panel" class="login-wrap">
+  <div class="login-hero"><span class="kicker">OFFICIAL YAB WORKSPACE</span><h1>Protect the voice.<br><em>Publish with purpose.</em></h1><p>Three carefully defined access levels ensure that news, photography and institutional content are reviewed before reaching the public.</p><div class="login-layers"><span>01 Leadership</span><span>02 Secretariat</span><span>03 Media</span></div></div>
+  <div class="login-card"><p class="eyebrow">INVITATION-ONLY ACCESS</p><h2>Sign in</h2><p>Use the email address invited by the YAB website administrator.</p>
+  <form id="login-form"><label>Email address<input id="login-email" type="email" autocomplete="email" required placeholder="yourname@example.com"></label><label>Password<input id="login-password" type="password" autocomplete="current-password" required placeholder="Enter your password"></label><button type="submit" class="primary">Sign in to dashboard ↗</button></form>
+  <button class="subtle" id="forgot-btn" type="button">Forgot your password?</button>
+  <div id="callback-panel" hidden><p id="callback-note"></p><form id="callback-form"><label>Choose a secure password<input id="callback-password" type="password" minlength="10" autocomplete="new-password" required></label><button class="primary" type="submit">Complete account setup</button></form></div>
+  <p class="smallmuted">Access is granted by invitation. Content publishing requires explicit Level 1 approval.</p></div>
+</section>
+<section id="dashboard" hidden>
+ <div class="workspace-head"><div><span class="kicker">YAB OFFICIAL CONTENT CONTROL</span><h1>Editorial dashboard</h1><p id="user-label">Loading permissions...</p></div><div class="action-row"><span id="role-pill" class="role-pill"></span><button id="reload-btn" type="button" class="outline">↻ Refresh</button><button id="logout-btn" type="button" class="outline">Sign out</button></div></div>
+ <div class="workspace-summary" id="summary"></div>
+ <div class="work-grid">
+  <aside class="work-sidebar"><div class="side-label">WORKSPACE</div><button class="nav-button active" data-tab="entries">Content queue</button><button class="nav-button" data-tab="editor">Create / edit</button><button class="nav-button" data-tab="guide">Permissions &amp; workflow</button><button class="nav-button" data-tab="audit" id="audit-button" hidden>Action history</button><div class="side-bottom">Every approval is recorded. Drafts are private until published.<br><br><a href="/" target="_blank" rel="noopener">Open public site ↗</a></div></aside>
+  <div class="work-main">
+  <section class="tab" id="tab-entries"><div class="section-head"><div><span class="eyebrow">ALL SUBMISSIONS</span><h2>Content queue</h2><p>Choose a submission to edit, review or approve.</p></div><button class="primary small" id="new-btn">+ New content</button></div><div class="filters"><label>Filter status <select id="status-filter"><option value="all">All statuses</option><option value="draft">Draft</option><option value="submitted">Awaiting Secretariat</option><option value="reviewed">Awaiting Leadership</option><option value="published">Published</option><option value="returned">Returned for correction</option><option value="archived">Archived</option></select></label><label>Filter section <select id="type-filter"><option value="all">All sections</option></select></label></div><div id="entry-list" class="entry-list"><p>Loading…</p></div></section>
+  <section class="tab" id="tab-editor" hidden><div class="section-head"><div><span class="eyebrow">EDITOR</span><h2 id="editor-heading">New content</h2><p id="editor-subtitle">Prepare a complete publication for review.</p></div><button type="button" id="clear-btn" class="outline">+ Start new</button></div>
+  <form id="entry-form">
+  <div class="field-grid"><label>Content type <select id="f-type" required><option value="news">News / activity report</option><option value="gallery">Gallery photograph</option><option value="announcement">Announcement</option><option value="programme">Programme update</option><option value="resource">Public resource</option><option value="board">Board biography update (Level 1)</option><option value="page">Institutional page update (Level 1)</option></select></label><label>Date (optional) <input id="f-date" type="date"></label></div>
+  <label>Title <input id="f-title" maxlength="160" required placeholder="Clear, factual headline"></label><label>Short summary <textarea id="f-summary" rows="2" maxlength="550" placeholder="Summary shown on website cards"></textarea></label>
+  <label>Full article / biography / description <textarea id="f-body" rows="9" maxlength="12000" required placeholder="Write the complete approved information. Plain text is supported; paragraphs are retained."></textarea></label>
+  <div class="field-grid"><label>Category (optional) <input id="f-category" maxlength="60" placeholder="Governance, Values education, Partnerships..."></label><label>Public HTTPS link (resources only) <input id="f-url" type="url" placeholder="https://..."></label></div>
+  <div class="field-grid"><label>Board member (for biographies) <select id="f-member"><option value="">Select Board member</option></select></label><label>Page (for institutional updates) <select id="f-page"><option value="about">About us</option><option value="programmes">Our work</option><option value="values">Essential values</option><option value="resources">Resources</option></select></label></div>
+  <div class="upload-panel"><label for="f-image">Optional image (required for gallery)</label><p>JPG, PNG or WebP, maximum 2 MB. Images must be approved for publication, including student safeguarding permissions.</p><input id="f-image" type="file" accept="image/jpeg,image/png,image/webp"><div id="image-preview"></div><div class="field-grid"><label>Image ALT description<input id="f-alt" maxlength="220" placeholder="Describe the event or people"></label><label>Photo credit<input id="f-credit" maxlength="120" placeholder="YAB Ghana / photographer"></label></div><label class="check"><input type="checkbox" id="f-consent"><span>I confirm that the image is authorised for public website use and that necessary safeguarding consent has been checked.</span></label></div>
+  <div class="footer-actions"><button type="submit" class="primary" id="save-btn">Save private draft</button><span id="editing-status" class="status-chip">Unsaved draft</span></div></form>
+  <div id="record-actions" class="record-actions" hidden><h3>Workflow actions</h3><p id="workflow-explain">Save the record before submission.</p><div id="workflow-buttons" class="action-row"></div></div>
+  </section>
+  <section class="tab" id="tab-guide" hidden><h2>Roles and publication policy</h2><div class="levels"><div><b>Level 1 · Chairperson and Deputy Chairperson</b><p>May manage all editorial content, approve and publish, archive, review action history, and change institutional biographies.</p></div><div><b>Level 2 · Secretary</b><p>May draft official updates, review submissions, request corrections and send approved drafts for Leadership sign-off.</p></div><div><b>Level 3 · Social Media Team</b><p>May create and edit its own news, gallery, programme, announcement and resource drafts, then submit to the Secretary.</p></div></div><div class="guide-note"><h3>Publication sequence</h3><p><b>Media draft → Secretary review → Leadership approval → public website</b></p><p>Secretariat-created content goes directly to Leadership review after submission. Edits to published content create a new draft revision, leaving the published version unchanged until approval.</p><p><b>Permissions are enforced by the server.</b> Users without an assigned editorial role cannot access submissions. No website visitor can grant themselves a role.</p></div></section>
+  <section class="tab" id="tab-audit" hidden><h2>Recent editorial activity</h2><p>Available to Level 1 only. Shows recent editorial actions with account identities.</p><div id="audit-list"></div></section>
+  </div>
+ </div>
+</section>
+</main>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<footer class="admin-footer"><span>Youth Advisory Board Ghana © 2026</span><span>All publishing privileges are subject to governance approval.</span></footer>
+</body></html>

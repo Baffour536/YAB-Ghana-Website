@@ -1,4 +1,15 @@
-.Rproj.user
+# RStudio local state
+.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
+# Build and dependencies
+node_modules/
+dist/
+.netlify/
+# Local sensitive files
+*.env
+.env*
+*.log
+# Research archives must remain outside this public repository
+PRIVATE_*/
